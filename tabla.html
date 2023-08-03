@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="css/table.css">
+    <link rel="shortcut icon" href="img/icono.png">
+    <script src="script/table.js"></script>
+    <title>Tabla Ordenable</title>
+</head>
+
+<body>
+    <div class="table-container">
+        <div class="logo">
+            <img src="img/logo.png" alt="Sociedad Mexicana de Ciencia de Computación">
+          </div>
+        <h1>Sociedad Mexicana de Ciencia de la Computación</h1>
+        <div class="table-container" style="overflow-y:auto">
+
+            <div class="search-container">
+                <input type="text" id="searchInput" onkeyup="filterTable()" placeholder="Buscar...">
+            </div>
+
+            <table>
+                <thead>
+                    <tr class="colortable">
+                        <th onclick="sortTable(0)">Usuario</th>
+                        <th onclick="sortTable(1)">Constancia</th>
+                        <th onclick="sortTable(2)">Botones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Aquí puedes generar los 50 elementos de la tabla usando un bucle -->
+                    <!-- Por ejemplo, usando JavaScript para agregar datos automáticamente -->
+                    <!-- Puedes modificar este código según tus datos reales -->
+                    <tr>
+                        <td>Elemento 1</td>
+                        <td>Dato 1</td>
+                        <td>Valor 1</td>
+                    </tr>
+                    <tr>
+                        <td>Alemento 2</td>
+                        <td>Dato 2</td>
+                        <td>Valor 2</td>
+                    </tr>
+                    <tr>
+                        <td>Elemento 3</td>
+                        <td>Dato 3</td>
+                        <td>Valor 3</td>
+                    </tr>
+                    <!-- ... Repite los 50 elementos aquí ... -->
+                </tbody>
+            </table>
+        </div>
+</body>
+
+</html>
