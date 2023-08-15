@@ -30,10 +30,6 @@ table {
 th,
 td {
     padding: 10px;
-    text-align: left;
-}
-
-th {
     text-align: center;
 }
 
@@ -83,3 +79,23 @@ tr:nth-child(even) {
 .logo img {
     max-width: 220px;
 }
+
+
+.btn {
+    border: none; /* Remove borders */
+    border-radius: 5px;
+    color: white; /* Add a text color */
+    padding: 14px 28px; /* Add some padding */
+    cursor: pointer; /* Add a pointer cursor on mouse-over */
+    font-size: 90%;
+    font-weight: bold;
+  }
+  
+  .eliminar {background-color: #97221E;} 
+  .eliminar:hover {background-color: #631613;}
+    
+  .editar {background-color: #d2b96b;} 
+  .editar:hover {background-color: #dad673;}
+
+  .constancia {background-color: #04AA6D;} 
+  .constancia:hover {background-color: #46a049;}
