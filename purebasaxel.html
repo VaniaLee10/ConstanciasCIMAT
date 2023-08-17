@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal 3,5 y 7</title>
+    <script src="script/modal_visualizacion.js"></script>
+    <link rel="stylesheet" href="css/modal.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.1/xlsx.full.min.js"></script>
+</head>
+<body>
+<!-- Modal 3 Importar Excel -->
+<button onclick="modalimportar()" id="openexcel">Importar Excel</button>
+
+<div id="mymodalexcel" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h1>Importar Excel</h1>
+        <label for="fileInput" id="uploadLabel" class="upload-label">
+            Subir Archivo Excel
+            <input type="file" id="fileInput" accept=".xlsx" style="display: none;">
+            <div id="filePreview" class="file-preview"></div>
+        </label>
+        <div id="excelPreview" class="excel-preview"></div>
+    </div>
+</div>
+
+<!-- Modal 5 Configuración-->
+<button onclick="modalconfiguracion()" id="openconfig">Configuración</button>
+<div id="mymodalconfiguracion" class="modal">
+    <div class="modal-content"  style="width: 20%;">
+        <span class="closed">&times;</span>
+
+        <center><h2>Añadir Configuracion</h2></center>
+        <label for="llave">Llave:</label>
+        <center><input type="number" id="llave"></center>
+
+        <h3>Presidente</h3>
+        <label for="nombre">Nombre: </label>
+        <center><input type="text" id="nombre"></center>
+        <br>
+        <br>
+        <label for="cargo">Cargo:</label>
+        <center><input type="text" id="cargo"></center>
+        <br>
+        <br>
+        <label for="periodo">Periodo:</label>
+        <center><input type="text" id="periodo"></center>
+
+        <h3>Configuración</h3>
+        <label for="titulo">Título:</label>
+        <center><input type="text" id="titulo"></center>
+        <br>
+        <br>
+        <label for="texto">Texto:</label>
+        <center><input type="text" id="texto"></center>
+        
+        <br>
+        <h3>Logo</h3>
+        <div id="logoContainer">
+            <div id="logoPreview">+</div>
+        </div>
+        <br><br>
+
+        <center><button id="guardarButton" class="guardarButton">Guardar</button></center>
+    </div>
+</div>
+
+
+</body>
+</html>
