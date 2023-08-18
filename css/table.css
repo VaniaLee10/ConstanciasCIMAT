@@ -59,7 +59,6 @@ tr:nth-child(even) {
     border: none;
     margin-right: 20px;
     margin-bottom: 10px;
-    ;
     font-size: 20px;
 }
 
@@ -121,14 +120,20 @@ tr:nth-child(even) {
 }
 
 .exportar_excel {
-    background-color: #dad673;
+    background-color: #E59794;
 }
 
 .exportar_excel:hover {
-    background-color: #d2b96b;
-    ;
+    background-color: #ca2e29;
 }
 
+.envio_constancias {
+    background-color: #dad673;
+}
+
+.envio_constancias:hover {
+    background-color: #d2b96b;
+}
 
 .column {
     float: left;

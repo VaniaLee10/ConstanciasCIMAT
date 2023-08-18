@@ -21,12 +21,9 @@
         <div class="table-container" style="overflow-y:auto">
             <div>
                 <div class="row">
-                    <div class="column">
-                        <button class="btn importar_excel">Importar a Excel</button>
-                    </div>
-                    <div class="column">
-                        <button class="btn exportar_excel" id="exportar" onclick="modal_exportar_excel()">Exportar a Excel</button>
-                    </div>
+                    <button class="btn importar_excel">Importar a Excel</button>
+                    <button class="btn exportar_excel" id="exportar" onclick="modal_exportar_excel()">Exportar a Excel</button>
+                    <button class="btn envio_constancias" id="envio_constancias" onclick="modal_envio_constancias()">Enviar Masivo</button>
                 </div>
                 <p></p>
             </div>
@@ -175,6 +172,102 @@
                 </div>
             </div>
         </div>
+
+
+        <!-- Modal Envio de Constancias -->
+    <div id="modal_envio_constancias" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2>Envio de Constancias</h2>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="column">
+                        <h2>Formato</h2>
+                        <p></p>
+                        <div>
+                            <h3>Formato 2</h3>
+                            <div>
+                                <h4>Presidente</h4>
+                                <label for="nombre_presidente">Nombre</label>
+                                <input type="text" id="nombre_presidente" name="nombre_presidente"
+                                    placeholder="Dra. Karina Mariela Figueoa Mora" style="width: 76.5%; margin: 5px;"
+                                    disabled>
+                                <label for="cargo_presidente">Cargo</label>
+                                <input type="text" id="cargo_presidente" name="cargo_presidente"
+                                    placeholder="Presidenta de la SMCC" style="width: 80%; margin: 5px;" disabled>
+                                <label for="periodo">Periodo</label>
+                                <input type="text" id="periodo" name="periodo" placeholder="2021-2023"
+                                    style="width: 76.5%; margin: 5px;" disabled>
+                                <br>
+                                <h4>Configuración</h4>
+                                <label for="titulo_configuracion">Título</label>
+                                <input type="text" id="titulo_configuracion" name="titulo_configuracion"
+                                    placeholder="La sociedad Mexicana de Ciencia de la Computación A.C. extiende este certificado a nombre de:"
+                                    style="width: 80%; margin: 5px;" disabled>
+                                <label for="texto_configuracion">Texto</label>
+                                <input type="text" id="texto_configuracion" name="texto_configuracion"
+                                    placeholder="Como <nombre> Socio no. <id> con validez durante el periodo <periodo_año>"
+                                    style="width: 80%; margin: 5px;" disabled>
+                                <label for="firma_configuracion">Logo</label>
+                                <div class="logo">
+                                    <img src="img/logo.png" alt="Sociedad Mexicana de Ciencia de Computación">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <h2>Usuarios</h2>
+                        <div class="search-container-chico">
+                            <input type="text" id="searchInput" onkeyup="filterTable()" placeholder="Buscar...">
+                        </div>
+                        <table class="chica">
+                            <thead>
+                                <th> </th>
+                                <th>ID</th>
+                                <th>Usuario</th>
+                            </thead>
+                            <tbody>
+                                <!-- Aquí puedes generar los 50 elementos de la tabla usando un bucle -->
+                                <tr>
+                                    <td><input type="checkbox" name="checkbox1" id="checkbox1" value="checkbox1">
+                                    </td>
+                                    <td>1</td>
+                                    <td>Nombre 1</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" name="checkbox2" id="checkbox2" value="checkbox2">
+                                    </td>
+                                    <td>2</td>
+                                    <td>Nombre 2</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" name="checkbox3" id="checkbox3" value="checkbox3">
+                                    </td>
+                                    <td>3</td>
+                                    <td>Nombre 3</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column">
+                        <button class="btn editar">Exportar</button>
+                    </div>
+                    <div class="column">
+                        <button class="btn eliminar" id="cerrar_modal_envio">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <p></p>
+            </div>
+        </div>
+    </div>
+
 
 
 </body>
