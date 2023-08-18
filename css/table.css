@@ -5,7 +5,7 @@ body {
     padding: 20px;
 }
 
-h1{
+h1 {
     font-size: 240%;
     text-align: center;
 }
@@ -58,7 +58,8 @@ tr:nth-child(even) {
     padding: 10px;
     border: none;
     margin-right: 20px;
-    margin-bottom: 10px;;
+    margin-bottom: 10px;
+    ;
     font-size: 20px;
 }
 
@@ -74,20 +75,69 @@ tr:nth-child(even) {
 
 
 .btn {
-    border: none; /* Remove borders */
+    border: none;
+    /* Remove borders */
     border-radius: 5px;
-    color: white; /* Add a text color */
-    padding: 14px 28px; /* Add some padding */
-    cursor: pointer; /* Add a pointer cursor on mouse-over */
+    color: white;
+    /* Add a text color */
+    padding: 14px 28px;
+    /* Add some padding */
+    cursor: pointer;
+    /* Add a pointer cursor on mouse-over */
     font-size: 90%;
     font-weight: bold;
-  }
-  
-  .eliminar {background-color: #97221E;} 
-  .eliminar:hover {background-color: #631613;}
-    
-  .editar {background-color: #d2b96b;} 
-  .editar:hover {background-color: #dad673;}
+}
 
-  .constancia {background-color: #04AA6D;} 
-  .constancia:hover {background-color: #46a049;}
+.eliminar {
+    background-color: #97221E;
+}
+
+.eliminar:hover {
+    background-color: #631613;
+}
+
+.editar {
+    background-color: #d2b96b;
+}
+
+.editar:hover {
+    background-color: #dad673;
+}
+
+.constancia {
+    background-color: #04AA6D;
+}
+
+.constancia:hover {
+    background-color: #46a049;
+}
+
+.importar_excel {
+    background-color: #ca2e29;
+}
+
+.importar_excel:hover {
+    background-color: #97221E;
+}
+
+.exportar_excel {
+    background-color: #dad673;
+}
+
+.exportar_excel:hover {
+    background-color: #d2b96b;
+    ;
+}
+
+
+.column {
+    float: left;
+    width: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}

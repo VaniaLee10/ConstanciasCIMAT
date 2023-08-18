@@ -1,3 +1,4 @@
+//---------------------------------Modal 7
 function modal_visualizacion() {
     // Get the modal
     var modal = document.getElementById("modal_visualizacion");
@@ -38,6 +39,13 @@ function modal_visualizacion() {
     // When the user clicks on <span> (x), close the modal
     span.onclick = function () {
         modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
     }
 }
 //-----------------------------------------------------------------------------------------------------------------------Modal 3
@@ -122,6 +130,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 //---------------------------------Modal 5
+
 function modalconfiguracion() {
     var modal = document.getElementById('mymodalconfiguracion');
     var btn = document.getElementById('openconfig');
@@ -142,6 +151,7 @@ function modalconfiguracion() {
 
 }
 
+//---------------------------------Modal 2
 function modal_exportar_excel() {
     // Get the modal
     var modal = document.getElementById("modal_exportar_excel");

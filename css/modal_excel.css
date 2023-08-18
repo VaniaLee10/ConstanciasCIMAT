@@ -70,18 +70,6 @@ body {font-family: Arial, Helvetica, sans-serif;}
   color: white;*/
 }
 
-.column {
-  float: left;
-  width: 50%;
-}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
 h1{
   font-size: 240%;
   text-align: center;
@@ -104,7 +92,7 @@ table .chica{
   overflow: scroll;
 }
 
-th:nth-child(1) {
+.chica th:nth-child(1) {
   background-color: #ca2e29;
   color: #fff;
   font-size: 15px;
@@ -113,7 +101,7 @@ th:nth-child(1) {
   width: 10%;
 }
 
-th:nth-child(2) {
+.chica th:nth-child(2) {
   background-color: #ca2e29;
   color: #fff;
   font-size: 15px;
@@ -123,7 +111,7 @@ th:nth-child(2) {
   width: 10%;
 }
 
-th:nth-child(3) {
+.chica th:nth-child(3) {
   background-color: #ca2e29;
   color: #fff;
   font-size: 15px;
@@ -133,7 +121,7 @@ th:nth-child(3) {
   width: 80%;
 }
 
-tr {
+.chica tr {
   background-color: #f5f2e7;
   font-size: 15px;
   text-align:right;

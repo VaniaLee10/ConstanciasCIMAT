@@ -5,7 +5,8 @@
     <link rel="stylesheet" href="css/table.css">
     <link rel="shortcut icon" href="img/icono.png">
     <link rel="stylesheet" href="css/modal_visualizacion.css">
-    
+    <link rel="stylesheet" href="css/modal_excel.css">
+
     <script src="script/modal_visualizacion.js"></script>
     <script src="script/table.js"></script>
     <title>Tabla Ordenable</title>
@@ -18,6 +19,17 @@
         </div>
         <h1>Sociedad Mexicana de Ciencia de la Computación</h1>
         <div class="table-container" style="overflow-y:auto">
+            <div>
+                <div class="row">
+                    <div class="column">
+                        <button class="btn importar_excel">Importar a Excel</button>
+                    </div>
+                    <div class="column">
+                        <button class="btn exportar_excel" id="exportar" onclick="modal_exportar_excel()">Exportar a Excel</button>
+                    </div>
+                </div>
+                <p></p>
+            </div>
 
             <div class="search-container">
                 <input type="text" id="searchInput" onkeyup="filterTable()" placeholder="Buscar...">
@@ -37,21 +49,24 @@
                     <!-- Puedes modificar este código según tus datos reales -->
                     <tr>
                         <td>Elemento 1</td>
-                        <td><button class="btn constancia" id="button_constancia" onclick="modal_visualizacion(1)" >Constancia</button></td>
+                        <td><button class="btn constancia" id="button_constancia"
+                                onclick="modal_visualizacion(1)">Constancia</button></td>
                         <td><button class="btn eliminar">Eliminar</button>
                             <button class="btn editar">Editar</button>
                         </td>
                     </tr>
                     <tr>
                         <td>Alemento 2</td>
-                        <td><button class="btn constancia" id="button_constancia2" onclick="modal_visualizacion(2)" >Constancia</button></td>
+                        <td><button class="btn constancia" id="button_constancia2"
+                                onclick="modal_visualizacion(2)">Constancia</button></td>
                         <td><button class="btn eliminar">Eliminar</button>
                             <button class="btn editar">Editar</button>
                         </td>
                     </tr>
                     <tr>
                         <td>Elemento 3</td>
-                        <td><button class="btn constancia" id="button_constancia3" onclick="modal_visualizacion(2)" >Constancia</button></td>
+                        <td><button class="btn constancia" id="button_constancia3"
+                                onclick="modal_visualizacion(2)">Constancia</button></td>
                         <td><button class="btn eliminar">Eliminar</button>
                             <button class="btn editar">Editar</button>
                         </td>
@@ -61,14 +76,104 @@
             </table>
         </div>
 
-        <img style="visibility: hidden;" id="myImg" src="img/CertificadoSMCC.jpg" alt="Snow"
+        <img style="visibility: hidden;" id="myImg" src="img/CertificadoSMCC.jpg" alt="Constancia"
             style="width:100%;max-width:300px">
 
-        <!-- The Modal -->
+
+
+
+        <!-- Modal Visualizar-->
         <div id="modal_visualizacion" class="modal">
             <span class="close">&times;</span>
             <img class="modal-content" id="img01">
             <div id="caption"></div>
+        </div>
+        
+
+        <!-- Modal Exportar -->
+        <div id="modal_exportar_excel" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <h2>Exportar a archivo de Excel</h2>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="column">
+                            <div class="row">
+                                <p></p>
+                                <div class="column">
+                                    <input type="checkbox" name="checkbox1" id="checkbox1" value="checkbox1">
+                                    <label for="checkbox1">Checkbox 1</label>
+                                    <br>
+                                    <input type="checkbox" name="checkbox2" id="checkbox2" value="checkbox2">
+                                    <label for="checkbox2">Checkbox 2</label>
+                                    <br>
+                                    <input type="checkbox" name="checkbox3" id="checkbox3" value="checkbox3">
+                                    <label for="checkbox3">Checkbox 3</label>
+                                    <br>
+                                </div>
+                                <div class="column">
+                                    <input type="radio" name="radio1" id="radio1" value="radio1">
+                                    <label for="radio1">Radio 1</label>
+                                    <br>
+                                    <input type="radio" name="radio2" id="radio2" value="radio2">
+                                    <label for="radio2">Radio 2</label>
+                                    <br>
+                                    <input type="radio" name="radio3" id="radio3" value="radio3">
+                                    <label for="radio3">Radio 3</label>
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="search-container-chico">
+                                <input type="text" id="searchInput" onkeyup="filterTable()" placeholder="Buscar...">
+                            </div>
+                            <table class="chica">
+                                <thead>
+                                    <th> </th>
+                                    <th>ID</th>
+                                    <th>Usuario</th>
+                                </thead>
+                                <tbody>
+                                    <!-- Aquí puedes generar los 50 elementos de la tabla usando un bucle -->
+                                    <tr>
+                                        <td><input type="checkbox" name="checkbox1" id="checkbox1" value="checkbox1">
+                                        </td>
+                                        <td>1</td>
+                                        <td>Nombre 1</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" name="checkbox2" id="checkbox2" value="checkbox2">
+                                        </td>
+                                        <td>2</td>
+                                        <td>Nombre 2</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" name="checkbox3" id="checkbox3" value="checkbox3">
+                                        </td>
+                                        <td>3</td>
+                                        <td>Nombre 3</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p></p>
+                        </div>
+                        <div class="row">
+                            <div class="column">
+                                <button class="btn editar">Exportar</button>
+                            </div>
+                            <div class="column">
+                                <button class="btn eliminar" id="cerrar_modal">Cerrar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <p></p>
+                </div>
+            </div>
         </div>
 
 
