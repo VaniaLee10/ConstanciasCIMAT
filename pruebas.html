@@ -5,6 +5,7 @@
     <link rel="shortcut icon" href="img/icono.png">
     <link rel="stylesheet" href="css/modal_visualizacion.css">
     <link rel="stylesheet" href="css/modal_excel.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.1/xlsx.full.min.js"></script>
     <script src="script/modal_visualizacion.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,22 +17,25 @@
     <button id="button_constancia" onclick="modal_visualizacion()">Abrir imagen</button>
     <button id="exportar" onclick="modal_exportar_excel()">Exportar Excel</button>
     <button id="envio_constancias" onclick="modal_envio_constancias()">Enviar Masivo</button>
-
+    <button id="openexcel" onclick="modalimportar()">Importar Excel</button>
+    <button id="openconfig" onclick="modalconfiguracion()">Añadir configuracion de constancia</button>
+    <button id="modalconstconfig" onclick="modalconstanciasconfig()">Constancia - Configuracion</button>
     <img style="visibility: hidden;" id="myImg" src="img/CertificadoSMCC.jpg" alt="Snow"
         style="width:100%;max-width:300px">
-    <!-- The Modal -->
+    
+        <!-- Modal Visualizacion m7 -->
     <div id="modal_visualizacion" class="modal">
-        <span class="close">&times;</span>
+        <span class="closem7">&times;</span>
         <img class="modal-content" id="img01">
         <div id="caption"></div>
     </div>
 
-
+    <!--Modal exportar excel m2-->
     <div id="modal_exportar_excel" class="modal">
         <!-- Modal content -->
         <div class="modal-content">
             <div class="modal-header">
-                <span class="close">&times;</span>
+                <span class="closem2">&times;</span>
                 <h2>Exportar a archivo de Excel</h2>
             </div>
             <div class="modal-body">
@@ -111,11 +115,11 @@
     </div>
 
 
-    <!-- Modal Envio de Constancias -->
+    <!-- Modal Envio de Constancias m4 -->
     <div id="modal_envio_constancias" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <span class="close">&times;</span>
+                <span class="closem4">&times;</span>
                 <h2>Envio de Constancias</h2>
             </div>
             <div class="modal-body">
@@ -128,12 +132,15 @@
                             <div>
                                 <h4>Presidente</h4>
                                 <label for="nombre_presidente">Nombre</label>
+                                <br>
                                 <input type="text" id="nombre_presidente" name="nombre_presidente"
                                     placeholder="Dra. Karina Mariela Figueoa Mora" style="width: 76.5%; margin: 5px;"
                                     disabled>
                                 <label for="cargo_presidente">Cargo</label>
+                                <br>
                                 <input type="text" id="cargo_presidente" name="cargo_presidente"
                                     placeholder="Presidenta de la SMCC" style="width: 80%; margin: 5px;" disabled>
+                                    <br>
                                 <label for="periodo">Periodo</label>
                                 <input type="text" id="periodo" name="periodo" placeholder="2021-2023"
                                     style="width: 76.5%; margin: 5px;" disabled>
@@ -205,6 +212,152 @@
         </div>
     </div>
 
+    <!-- Modal de importar constancias m3-->
+    <div id="mymodalexcel" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="closem3">&times;</span>
+                <h2>Importar Excel Excel</h2>
+            </div>
+            <div class="modal-body">
+                <label for="fileInput" id="uploadLabel" class="upload-label">
+                    Subir Archivo Excel
+                    <input type="file" id="fileInput" accept=".xlsx" style="display: none;">
+                    <div id="filePreview" class="file-preview"></div>
+                </label>
+                <div id="excelPreview" class="excel-preview"></div>
+            </div>
+           
+        </div>
+    </div>
+
+
+    <!-- Modal de configuracion m5-->
+    <div id="mymodalconfiguracion" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="closem5">&times;</span>
+                <h2>Añadir Configuracion</h2>
+            </div>
+            <div class="modal-body">
+              
+
+        <center><h2>Añadir Configuracion</h2></center>
+        <label for="llave">Llave:</label>
+        <center><input type="number" id="llave"></center>
+
+        <h3>Presidente</h3>
+        <label for="nombre">Nombre: </label>
+        <center><input type="text" id="nombre"></center>
+        <br>
+        <br>
+        <label for="cargo">Cargo:</label>
+        <center><input type="text" id="cargo"></center>
+        <br>
+        <br>
+        <label for="periodo">Periodo:</label>
+        <center><input type="text" id="periodo"></center>
+
+        <h3>Configuración</h3>
+        <label for="titulo">Título:</label>
+        <center><input type="text" id="titulo"></center>
+        <br>
+        <br>
+        <label for="texto">Texto:</label>
+        <center><input type="text" id="texto"></center>
+        
+        <br>
+        <h3>Logo</h3>
+        <div id="logoContainer">
+            <div id="logoPreview">+</div>
+        </div>
+        <br><br>
+
+        <center><button id="guardarButton" class="guardarButton">Guardar</button></center>
+            </div>
+           
+        </div>
+    </div>
+
+
+    <!----------MODAL 6-->
+    <div id="mymodalconstconfig" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="closem6">&times;</span>
+                <h2>Configuracion de Constancias</h2>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="column">
+                        <label for="nombre_completo">Nombre Completo</label>
+                        <div style="display: flex; align-items: center;">
+                            <input type="text" id="nombre_completo" name="nombre_completo" style="width: 80%; margin-right: 10px;">
+                            <img src="icono_usuario.png" alt="Icono de Usuario" style="width: 20px; height: 20px;">
+                        </div>
+                    
+                        <br>
+                    
+                        <label for="formato">Formato:</label>
+                        <select id="formato" name="formato">
+                            <option value="formato1">Formato 1</option>
+                            <option value="formato2">Formato 2</option>
+                            <option value="formato3">Formato 3</option>
+                            <option value="formato4">Formato 4</option>
+                        </select>
+                    <button>+</button>
+                        
+                    </div>
+                    <div class="column">
+                        <div style="width: 300px; height: 300px; overflow: auto; border: 1px solid #ccc; padding: 10px;">
+                            <h2>Formato</h2>
+                            <p></p>
+                            <div>
+                                <h3>Formato 2</h3>
+                                <div>
+                                    <h4>Presidente</h4>
+                                    <label for="nombre_presidente">Nombre</label><br>
+                                    <input type="text" id="nombre_presidente" name="nombre_presidente"
+                                        placeholder="Dra. Karina Mariela Figueoa Mora" style="width: 76.5%; margin: 5px;" disabled>
+                                    <label for="cargo_presidente">Cargo</label><br>
+                                    <input type="text" id="cargo_presidente" name="cargo_presidente"
+                                        placeholder="Presidenta de la SMCC" style="width: 80%; margin: 5px;" disabled><br>
+                                    <label for="periodo">Periodo</label>
+                                    <input type="text" id="periodo" name="periodo" placeholder="2021-2023"
+                                        style="width: 76.5%; margin: 5px;" disabled><br>
+                                    <h4>Configuración</h4>
+                                    <label for="titulo_configuracion">Título</label>
+                                    <input type="text" id="titulo_configuracion" name="titulo_configuracion"
+                                        placeholder="La sociedad Mexicana de Ciencia de la Computación A.C. extiende este certificado a nombre de:"
+                                        style="width: 80%; margin: 5px;" disabled>
+                                    <label for="texto_configuracion">Texto</label>
+                                    <input type="text" id="texto_configuracion" name="texto_configuracion"
+                                        placeholder="Como <nombre> Socio no. <id> con validez durante el periodo <periodo_año>"
+                                        style="width: 80%; margin: 5px;" disabled>
+                                    <label for="firma_configuracion">Logo</label>
+                                    <div class="logo">
+                                        <img src="img/logo.png" alt="Sociedad Mexicana de Ciencia de Computación">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column">
+                        <button class="btn editar">Exportar</button>
+                        <button class="btn ver">Ver</button>
+                    </div>
+                    <div class="column">
+                        <button class="btn eliminar" id="cerrar_modal_envio">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <p></p>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

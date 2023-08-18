@@ -85,16 +85,3 @@ body {
     background-color: #97221E;
     color: #fff;
   }
-  .closedconst {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.closedconst:hover,
-.closedconst:focus {
-    color: rgb(255, 255, 255);
-    text-decoration: none;
-    cursor: pointer;
-}
