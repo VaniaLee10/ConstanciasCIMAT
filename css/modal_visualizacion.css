@@ -8,11 +8,6 @@ body {font-family: Arial, Helvetica, sans-serif;}
 
 #myImg:hover {opacity: 0.7;}
 
-/* The Modal (background) */
-.modal-header{
-  background-color: #ca2e29;
-  height: 40px;
-}
 .modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
