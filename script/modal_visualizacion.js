@@ -185,3 +185,23 @@ function modal_exportar_excel() {
     }
 
 }
+//---------------------------------Modal 6
+function modalconstancias() {
+    var modal = document.getElementById('mymodalconst');
+    var btn = document.getElementById('modalconst');
+    var span = document.getElementsByClassName('closedconst')[0];
+    btn.onclick = function () {
+        modal.style.display = 'block';
+    };
+
+    span.onclick = function () {
+        modal.style.display = 'none';
+    };
+
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    };
+
+}
