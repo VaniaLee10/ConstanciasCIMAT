@@ -4,6 +4,9 @@
 <head>
     <link rel="stylesheet" href="css/table.css">
     <link rel="shortcut icon" href="img/icono.png">
+    <link rel="stylesheet" href="css/modal_visualizacion.css">
+    
+    <script src="script/modal_visualizacion.js"></script>
     <script src="script/table.js"></script>
     <title>Tabla Ordenable</title>
 </head>
@@ -12,7 +15,7 @@
     <div class="table-container">
         <div class="logo">
             <img src="img/logo.png" alt="Sociedad Mexicana de Ciencia de Computación">
-          </div>
+        </div>
         <h1>Sociedad Mexicana de Ciencia de la Computación</h1>
         <div class="table-container" style="overflow-y:auto">
 
@@ -34,21 +37,21 @@
                     <!-- Puedes modificar este código según tus datos reales -->
                     <tr>
                         <td>Elemento 1</td>
-                        <td><button class="btn constancia" id="visualizar">Open Modal</button></td>
+                        <td><button class="btn constancia" id="button_constancia" onclick="modal_visualizacion(1)" >Constancia</button></td>
                         <td><button class="btn eliminar">Eliminar</button>
                             <button class="btn editar">Editar</button>
                         </td>
                     </tr>
                     <tr>
                         <td>Alemento 2</td>
-                        <td><button class="btn constancia" id="myBtn">Open Modal</button></td>
+                        <td><button class="btn constancia" id="button_constancia2" onclick="modal_visualizacion(2)" >Constancia</button></td>
                         <td><button class="btn eliminar">Eliminar</button>
                             <button class="btn editar">Editar</button>
                         </td>
                     </tr>
                     <tr>
                         <td>Elemento 3</td>
-                        <td><button class="btn constancia" id="myBtn">Open Modal</button></td>
+                        <td><button class="btn constancia" id="button_constancia3" onclick="modal_visualizacion(2)" >Constancia</button></td>
                         <td><button class="btn eliminar">Eliminar</button>
                             <button class="btn editar">Editar</button>
                         </td>
@@ -57,6 +60,18 @@
                 </tbody>
             </table>
         </div>
+
+        <img style="visibility: hidden;" id="myImg" src="img/CertificadoSMCC.jpg" alt="Snow"
+            style="width:100%;max-width:300px">
+
+        <!-- The Modal -->
+        <div id="modal_visualizacion" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="img01">
+            <div id="caption"></div>
+        </div>
+
+
 </body>
 
 </html>

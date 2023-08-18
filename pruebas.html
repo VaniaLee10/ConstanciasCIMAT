@@ -1,24 +1,112 @@
 <html lang="en">
+
 <head>
     <link rel="stylesheet" href="css/table.css">
     <link rel="shortcut icon" href="img/icono.png">
     <link rel="stylesheet" href="css/modal_visualizacion.css">
+    <link rel="stylesheet" href="css/modal_excel.css">
     <script src="script/modal_visualizacion.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pruebas</title>
 </head>
+
 <body>
     Pruebas
     <button id="button_constancia" onclick="modal_visualizacion()">Abrir imagen</button>
-    <img style="visibility: hidden;" id="myImg" src="img/CertificadoSMCC.jpg" alt="Snow" style="width:100%;max-width:300px">
+    <button id="exportar" onclick="modal_exportar_excel()">Exportar Excel</button>
+    <img style="visibility: hidden;" id="myImg" src="img/CertificadoSMCC.jpg" alt="Snow"
+        style="width:100%;max-width:300px">
+    <!-- The Modal -->
+    <div id="modal_visualizacion" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
+    </div>
 
-<!-- The Modal -->
-<div id="myModal" class="modal">
-  <span class="close">&times;</span>
-  <img class="modal-content" id="img01">
-  <div id="caption"></div>
-</div>
+    <div id="modal_exportar_excel" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2>Exportar a archivo de Excel</h2>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="column">
+                        <div class="row">
+                            <p></p>
+                            <div class="column">
+                                <input type="checkbox" name="checkbox1" id="checkbox1" value="checkbox1">
+                                <label for="checkbox1">Checkbox 1</label>
+                                <br>
+                                <input type="checkbox" name="checkbox2" id="checkbox2" value="checkbox2">
+                                <label for="checkbox2">Checkbox 2</label>
+                                <br>
+                                <input type="checkbox" name="checkbox3" id="checkbox3" value="checkbox3">
+                                <label for="checkbox3">Checkbox 3</label>
+                                <br>
+                            </div>
+                            <div class="column">
+                                <input type="radio" name="radio1" id="radio1" value="radio1">
+                                <label for="radio1">Radio 1</label>
+                                <br>
+                                <input type="radio" name="radio2" id="radio2" value="radio2">
+                                <label for="radio2">Radio 2</label>
+                                <br>
+                                <input type="radio" name="radio3" id="radio3" value="radio3">
+                                <label for="radio3">Radio 3</label>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="search-container-chico">
+                            <input type="text" id="searchInput" onkeyup="filterTable()" placeholder="Buscar...">
+                        </div>
+                        <table class="chica">
+                            <thead>
+                                <th> </th>
+                                <th>ID</th>
+                                <th>Usuario</th>
+                            </thead>
+                            <tbody>
+                                <!-- Aquí puedes generar los 50 elementos de la tabla usando un bucle -->
+                                <tr>
+                                    <td><input type="checkbox" name="checkbox1" id="checkbox1" value="checkbox1"></td>
+                                    <td>1</td>
+                                    <td>Nombre 1</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" name="checkbox2" id="checkbox2" value="checkbox2"></td>
+                                    <td>2</td>
+                                    <td>Nombre 2</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" name="checkbox3" id="checkbox3" value="checkbox3"></td>
+                                    <td>3</td>
+                                    <td>Nombre 3</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p></p>
+                    </div>
+                    <div class="row">
+                        <div class="column">
+                            <button class="btn editar">Exportar</button>
+                        </div>
+                        <div class="column">
+                            <button class="btn eliminar" id="cerrar_modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <p></p>
+            </div>
+        </div>
+    </div>
 
 </body>
+
 </html>

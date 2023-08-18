@@ -1,17 +1,36 @@
 function modal_visualizacion() {
     // Get the modal
-    var modal = document.getElementById("myModal");
+    var modal = document.getElementById("modal_visualizacion");
+    var button = document.getElementById("button_constancia");
+    /*
+    var button;
+    const id = id;
+    alert(id);
+    switch (id) {
+        case 1:
+            button = document.getElementById("button_constancia");
+            break;
+        case 2:
+            button = document.getElementById("button_constancia2");
+            break;
+        case 3:
+            button = document.getElementById("button_constancia3");
+            break;
+        default:
+            button = document.getElementById("button_constancia");
+            break;
+    }
+    */
 
     // Get the image and insert it inside the modal - use its "alt" text as a caption
-    var button = document.getElementById("button_constancia");
     var img = document.getElementById("myImg");
     var modalImg = document.getElementById("img01");
     var captionText = document.getElementById("caption");
-    button.onclick = function () {
-        modal.style.display = "block";
-        modalImg.src = img.src;
-        captionText.innerHTML = img.alt;
-    }
+
+    modal.style.display = "block";
+    modalImg.src = img.src;
+    captionText.innerHTML = img.alt;
+
 
     // Get the <span> element that closes the modal
     var span = document.getElementsByClassName("close")[0];
@@ -22,10 +41,10 @@ function modal_visualizacion() {
     }
 }
 //-----------------------------------------------------------------------------------------------------------------------Modal 3
-function excel(){
-    fileInput.addEventListener('change', function() {
+function excel() {
+    fileInput.addEventListener('change', function () {
         var selectedFile = fileInput.files[0];
-        
+
         if (selectedFile && selectedFile.type === 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet') {
             // Mostrar la previsualización de Excel
             previewExcelData(selectedFile);
@@ -34,33 +53,33 @@ function excel(){
         }
     });
 
-fileInput.addEventListener('change', function() {
-    var selectedFile = fileInput.files[0];
-    
-    if (selectedFile && selectedFile.type === 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet') {
-        // Aquí puedes agregar lógica para manejar el archivo Excel seleccionado
-        console.log('Archivo Excel seleccionado:', selectedFile.name);
-    } else {
-        alert('Por favor, selecciona un archivo Excel válido.');
-    }
-});
+    fileInput.addEventListener('change', function () {
+        var selectedFile = fileInput.files[0];
+
+        if (selectedFile && selectedFile.type === 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet') {
+            // Aquí puedes agregar lógica para manejar el archivo Excel seleccionado
+            console.log('Archivo Excel seleccionado:', selectedFile.name);
+        } else {
+            alert('Por favor, selecciona un archivo Excel válido.');
+        }
+    });
 
 }
 
-function modalimportar(){
+function modalimportar() {
     var modal = document.getElementById('mymodalexcel');
     var btn = document.getElementById('openexcel');
     var span = document.getElementsByClassName('close')[0];
 
-    btn.onclick = function() {
+    btn.onclick = function () {
         modal.style.display = 'block';
     };
 
-    span.onclick = function() {
+    span.onclick = function () {
         modal.style.display = 'none';
     };
 
-    window.onclick = function(event) {
+    window.onclick = function (event) {
         if (event.target == modal) {
             modal.style.display = 'none';
         }
@@ -69,9 +88,9 @@ function modalimportar(){
 
 function previewExcelData(file) {
     var excelPreview = document.getElementById('excelPreview');
-    
+
     var reader = new FileReader();
-    reader.onload = function(e) {
+    reader.onload = function (e) {
         var data = new Uint8Array(e.target.result);
         var workbook = XLSX.read(data, { type: 'array' });
 
@@ -79,19 +98,19 @@ function previewExcelData(file) {
         var sheet = workbook.Sheets[firstSheetName];
 
         var htmlTable = XLSX.utils.sheet_to_html(sheet);
-        
+
         excelPreview.innerHTML = htmlTable;
     };
 
     reader.readAsArrayBuffer(file);
 }
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     var fileInput = document.getElementById('fileInput');
 
-    fileInput.addEventListener('change', function() {
+    fileInput.addEventListener('change', function () {
         var selectedFile = fileInput.files[0];
-        
+
         if (selectedFile && selectedFile.type === 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet') {
             previewExcelData(selectedFile);
         } else {
@@ -103,22 +122,56 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 //---------------------------------Modal 5
-function modalconfiguracion(){
+function modalconfiguracion() {
     var modal = document.getElementById('mymodalconfiguracion');
     var btn = document.getElementById('openconfig');
     var span = document.getElementsByClassName('closed')[0];
-    btn.onclick = function() {
+    btn.onclick = function () {
         modal.style.display = 'block';
     };
 
-    span.onclick = function() {
+    span.onclick = function () {
         modal.style.display = 'none';
     };
 
-    window.onclick = function(event) {
+    window.onclick = function (event) {
         if (event.target == modal) {
             modal.style.display = 'none';
         }
     };
+
+}
+
+function modal_exportar_excel() {
+    // Get the modal
+    var modal = document.getElementById("modal_exportar_excel");
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("exportar");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[1];
+
+    // When the user clicks the button, open the modal 
+    btn.onclick = function () {
+        modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+    var btn_cerrar = btn = document.getElementById("cerrar_modal");
+    btn_cerrar.onclick = function () {
+        modal.style.display = "none";
+    }
 
 }
