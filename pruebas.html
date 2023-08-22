@@ -19,11 +19,12 @@
     <button id="envio_constancias" onclick="modal_envio_constancias()">Enviar Masivo</button>
     <button id="openexcel" onclick="modalimportar()">Importar Excel</button>
     <button id="openconfig" onclick="modalconfiguracion()">Añadir configuracion de constancia</button>
+    <button id="openconfig" onclick="modalconfiguracioneditar()">Editar configuracion de constancia</button>
     <button id="modalconstconfig" onclick="modalconstanciasconfig()">Constancia - Configuracion</button>
     <img style="visibility: hidden;" id="myImg" src="img/CertificadoSMCC.jpg" alt="Snow"
         style="width:100%;max-width:300px">
-    
-        <!-- Modal Visualizacion m7 -->
+
+    <!-- Modal Visualizacion m7 -->
     <div id="modal_visualizacion" class="modal">
         <span class="closem7">&times;</span>
         <img class="modal-content" id="img01">
@@ -140,7 +141,7 @@
                                 <br>
                                 <input type="text" id="cargo_presidente" name="cargo_presidente"
                                     placeholder="Presidenta de la SMCC" style="width: 80%; margin: 5px;" disabled>
-                                    <br>
+                                <br>
                                 <label for="periodo">Periodo</label>
                                 <input type="text" id="periodo" name="periodo" placeholder="2021-2023"
                                     style="width: 76.5%; margin: 5px;" disabled>
@@ -227,7 +228,7 @@
                 </label>
                 <div id="excelPreview" class="excel-preview"></div>
             </div>
-           
+
         </div>
     </div>
 
@@ -240,42 +241,88 @@
                 <h2>Añadir Configuracion</h2>
             </div>
             <div class="modal-body">
-              
 
-        <center><h2>Añadir Configuracion</h2></center>
-        <label for="llave">Llave:</label>
-        <center><input type="number" id="llave"></center>
 
-        <h3>Presidente</h3>
-        <label for="nombre">Nombre: </label>
-        <center><input type="text" id="nombre"></center>
-        <br>
-        <br>
-        <label for="cargo">Cargo:</label>
-        <center><input type="text" id="cargo"></center>
-        <br>
-        <br>
-        <label for="periodo">Periodo:</label>
-        <center><input type="text" id="periodo"></center>
+                <center>
+                    <h2>Añadir Configuracion</h2>
+                </center>
+                <label for="llave">Llave:</label>
+                <center><input type="number" id="llave"></center>
 
-        <h3>Configuración</h3>
-        <label for="titulo">Título:</label>
-        <center><input type="text" id="titulo"></center>
-        <br>
-        <br>
-        <label for="texto">Texto:</label>
-        <center><input type="text" id="texto"></center>
-        
-        <br>
-        <h3>Logo</h3>
-        <div id="logoContainer">
-            <div id="logoPreview">+</div>
-        </div>
-        <br><br>
+                <h3>Presidente</h3>
+                <label for="nombre">Nombre: </label>
+                <center><input type="text" id="nombre"></center>
+                <br>
+                <br>
+                <label for="cargo">Cargo:</label>
+                <center><input type="text" id="cargo"></center>
+                <br>
+                <br>
+                <label for="periodo">Periodo:</label>
+                <center><input type="text" id="periodo"></center>
 
-        <center><button id="guardarButton" class="guardarButton">Guardar</button></center>
+                <h3>Configuración</h3>
+                <label for="titulo">Título:</label>
+                <center><input type="text" id="titulo"></center>
+                <br>
+                <br>
+                <label for="texto">Texto:</label>
+                <center><input type="text" id="texto"></center>
+
+                <br>
+                <h3>Logo</h3>
+                <div id="logoContainer">
+                    <div id="logoPreview">+</div>
+                </div>
+                <br><br>
+
+                <center><button id="guardarButton" class="guardarButton">Guardar</button></center>
             </div>
-           
+
+        </div>
+    </div>
+
+
+    <!-- Modal de configuracion m8-->
+    <div id="modalconfiguracioneditar" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="closem8">&times;</span>
+                <h2>Editar Configuración</h2>
+            </div>
+            <div class="modal-body">
+                <div class="center">
+                    <h2>Editar Formato</h2>
+                    <label for="llave">Llave:</label>
+                    <input type="number" id="llave" placeholder="2" disabled style="width: 5%;">
+                    <h3>Presidente</h3>
+                    <label for="nombre">Nombre: </label>
+                    <input type="text" id="nombre" placeholder="Dra. Karina Mariela Figueoa Mora" style="width: 30%;">
+                    <br>
+                    <br>
+                    <label for="cargo">Cargo:</label>
+                    <input type="text" id="cargo" placeholder="Presidenta de la SMCC">
+                    <br>
+                    <br>
+                    <label for="periodo">Periodo:</label>
+                    <input type="text" id="periodo" placeholder="2021-2023" style="width: 15%;">
+                    <h3>Configuración</h3>
+                    <label for="titulo">Título:</label>
+                    <input type="text" id="titulo" placeholder="La sociedad Mexicana de Ciencia de la Computación A.C. extiende este certificado a nombre de:" style="width: 82%;">
+                    <br>
+                    <br>
+                    <label for="texto">Texto:</label>
+                    <input type="text" id="texto" placeholder="Como <nombre> Socio no. <id> con validez durante el periodo <periodo_año>" style="width: 70%;">
+                    <br>
+                    <h3>Logo</h3>
+                    <div id="logoContainer">
+                        <div id="logoPreview">+</div>
+                    </div>
+                    <br><br>
+                    <button id="guardarButton" class="guardarButton">Guardar</button>
+                    <p></p>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -292,12 +339,13 @@
                     <div class="column">
                         <label for="nombre_completo">Nombre Completo</label>
                         <div style="display: flex; align-items: center;">
-                            <input type="text" id="nombre_completo" name="nombre_completo" style="width: 80%; margin-right: 10px;">
+                            <input type="text" id="nombre_completo" name="nombre_completo"
+                                style="width: 80%; margin-right: 10px;">
                             <img src="icono_usuario.png" alt="Icono de Usuario" style="width: 20px; height: 20px;">
                         </div>
-                    
+
                         <br>
-                    
+
                         <label for="formato">Formato:</label>
                         <select id="formato" name="formato">
                             <option value="formato1">Formato 1</option>
@@ -305,11 +353,12 @@
                             <option value="formato3">Formato 3</option>
                             <option value="formato4">Formato 4</option>
                         </select>
-                    <button>+</button>
-                        
+                        <button>+</button>
+
                     </div>
                     <div class="column">
-                        <div style="width: 300px; height: 300px; overflow: auto; border: 1px solid #ccc; padding: 10px;">
+                        <div
+                            style="width: 300px; height: 300px; overflow: auto; border: 1px solid #ccc; padding: 10px;">
                             <h2>Formato</h2>
                             <p></p>
                             <div>
@@ -318,10 +367,12 @@
                                     <h4>Presidente</h4>
                                     <label for="nombre_presidente">Nombre</label><br>
                                     <input type="text" id="nombre_presidente" name="nombre_presidente"
-                                        placeholder="Dra. Karina Mariela Figueoa Mora" style="width: 76.5%; margin: 5px;" disabled>
+                                        placeholder="Dra. Karina Mariela Figueoa Mora"
+                                        style="width: 76.5%; margin: 5px;" disabled>
                                     <label for="cargo_presidente">Cargo</label><br>
                                     <input type="text" id="cargo_presidente" name="cargo_presidente"
-                                        placeholder="Presidenta de la SMCC" style="width: 80%; margin: 5px;" disabled><br>
+                                        placeholder="Presidenta de la SMCC" style="width: 80%; margin: 5px;"
+                                        disabled><br>
                                     <label for="periodo">Periodo</label>
                                     <input type="text" id="periodo" name="periodo" placeholder="2021-2023"
                                         style="width: 76.5%; margin: 5px;" disabled><br>
