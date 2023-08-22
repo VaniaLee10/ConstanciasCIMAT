@@ -50,6 +50,16 @@ body {font-family: Arial, Helvetica, sans-serif;}
   animation-duration: 0.6s;
 }
 
+div.scroll {
+  width: 600px;
+  height: 600px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  margin-left: 50px; /* Same as the width of the sidenav 
+  font-size: 28px; Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
 @-webkit-keyframes zoom {
   from {-webkit-transform:scale(0)} 
   to {-webkit-transform:scale(1)}
@@ -69,14 +79,12 @@ body {font-family: Arial, Helvetica, sans-serif;}
   font-weight: bold;
   transition: 0.3s;
 }
-
 .closem2:hover,
 .closem2:focus {
   color: #bbb;
   text-decoration: none;
   cursor: pointer;
 }
-
 /* 100% Image Width on Smaller Screens */
 @media only screen and (max-width: 700px){
   .modal-content {
@@ -94,20 +102,19 @@ body {font-family: Arial, Helvetica, sans-serif;}
   font-weight: bold;
   transition: 0.3s;
 }
-
 .closem3:hover,
 .closem3:focus {
   color: #bbb;
   text-decoration: none;
   cursor: pointer;
 }
-
 /* 100% Image Width on Smaller Screens */
 @media only screen and (max-width: 700px){
   .modal-content {
     width: 100%;
   }
 }
+
 .closem4 {
   position: absolute;
   top: 15px;
@@ -123,7 +130,6 @@ body {font-family: Arial, Helvetica, sans-serif;}
   text-decoration: none;
   cursor: pointer;
 }
-
 /* 100% Image Width on Smaller Screens */
 @media only screen and (max-width: 700px){
   .modal-content {
@@ -131,6 +137,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
   }
 
 }
+
 .closem5 {
   position: absolute;
   top: 15px;
@@ -190,7 +197,6 @@ body {font-family: Arial, Helvetica, sans-serif;}
   text-decoration: none;
   cursor: pointer;
 }
-
 /* 100% Image Width on Smaller Screens */
 @media only screen and (max-width: 700px){
   .modal-content {
@@ -213,7 +219,28 @@ body {font-family: Arial, Helvetica, sans-serif;}
   text-decoration: none;
   cursor: pointer;
 }
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
+}
 
+.closem9 {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+.closem9:hover,
+.closem9:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
 /* 100% Image Width on Smaller Screens */
 @media only screen and (max-width: 700px){
   .modal-content {

@@ -268,7 +268,7 @@ function modalconstanciasconfig() {
     };
 
     //When the user clicks on Cerrar / Cancelar
-    var btn_cerrar = btn = document.getElementById("cerrar_modal_envio");
+    var btn_cerrar = btn = document.getElementById("cerrar_modal_config");
     btn_cerrar.onclick = function () {
         modal.style.display = "none";
     }
@@ -280,7 +280,7 @@ function modalconstanciasconfig() {
 //---------------------------------Modal 9
 function modalconfiguracioneditar() {
     var modal = document.getElementById('modalconfiguracioneditar');
-    var btn = document.getElementById('modalconfiguracioneditar');
+    var btn = document.getElementById('configuracioneditar');
     var span = document.getElementsByClassName('closem8')[0];
     
     modal.style.display = 'block';
@@ -294,6 +294,32 @@ function modalconfiguracioneditar() {
             modal.style.display = 'none';
         }
     };
+}
+//---------------------------------Modal 9 Final
 
+
+//---------------------------------Modal 9
+function modalEditarUsuario() {
+    var modal = document.getElementById('modalEditarUsuario');
+    var btn = document.getElementById('editarUsuario');
+    var span = document.getElementsByClassName('closem9')[0];
+    
+    modal.style.display = 'block';
+
+    span.onclick = function () {
+        modal.style.display = 'none';
+    };
+
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    };
+    
+    //When the user clicks on Cerrar / Cancelar
+    var btn_cerrar = btn = document.getElementById("cerrar_modal_datos");
+    btn_cerrar.onclick = function () {
+        modal.style.display = "none";
+    }
 }
 //---------------------------------Modal 9 Final
